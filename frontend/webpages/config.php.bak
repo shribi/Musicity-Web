@@ -1,0 +1,13 @@
+<?php
+/* Database credentials. Assuming you are running MySQL
+server with default setting (user 'root' with no password) */
+ 
+/* Attempt to connect to MySQL database */
+$link = mysqli_connect("localhost", "admin", "admin", "musinfo");
+ 
+// Check connection
+if(mysqli_connect_errno()){
+	echo "Failed to connect : ".mysql_connect_error();
+	exit();
+}
+?>

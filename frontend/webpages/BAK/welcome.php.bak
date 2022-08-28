@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--------------------------------------------------------------------------------------------------------------------------------> 
+ <style>
+ 
+        *{
+            padding: 0;
+            margin: 0;
+        }
+ 
+        body{
+            height: 100vh;
+            width: 100%;
+            background-image: url('http://localhost/MINI%20project/frontend/webpages/Images/p.jpg');
+            background-size: 1520px 900px;
+            background-position: center;
+            position: relative;
+        }
+ 
+        .content{
+            width: 100%;
+            position: absolute;
+            top: 300px;
+        }
+		div.option1{
+			color:white;
+			float:center;
+			font-size:18px;
+		position: absolute;
+		bottom: 350px;
+		left: 0px;
+			width:50px;
+			height: 50px;
+		}
+		div.option2{
+			color:white;
+			font-size:18px;
+		position: absolute;
+		bottom: 350px;
+		left:250px;
+			width:50px;
+			height: 50px;
+		}
+		div.option3{
+			color:white;
+			font-size:18px;
+		position: absolute;
+		bottom: 350px;
+		left:500px;
+			width:50px;
+			height: 50px;
+		} 
+        .left-col {
+            position: absolute;
+			top: 80px;
+			left: 100px;
+        }
+		.art{
+			background-color:#929292;
+			border: 2px solid white;
+			box-shadow: 1px 1px 2px white;
+			height: 50px;
+			width: 200px;
+			border-radius: 10px;
+		}
+		.button{
+			box-shadow: 1px 1px 2px white;
+			height: 50px;
+			border-radius: 10px;
+			text-decoration:none;
+			text: black;
+			position:absolute;
+			left:820px;
+			top:150px;
+			border: 2px solid white;
+			background-color: #929292;
+			font-size: 30px;
+		}
+		.rad1 {
+  position: absolute;
+  top: -2px;
+  left: 80px;
+  height: 20px;
+  width: 20px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+		.rad2 {
+  position: absolute;
+  top: -2px;
+  left: 115px;
+  height: 20px;
+  width: 20px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+		.rad3 {
+  position: absolute;
+  top: -2px;
+  left: 65px;
+  height: 20px;
+  width: 20px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+.img{
+  position: absolute;
+  top:50px;
+  right: 100px;	
+}
+.img1{
+  position: absolute;
+  top:250px;
+  right: 400px;
+}
+.img2{
+  position: absolute;
+  top: 250px;
+  right: 100px;
+}
+.img3{
+  position: absolute;
+  top: 500px;
+  right: 400px;
+}
+.img4{
+  position: absolute;
+  top: 500px;
+  right: 100px;
+}
+ 
+        .left-col h1 {
+            font-size: 130px;
+            color: #929292;
+        }
+ 
+        #icon {
+            cursor: pointer;
+        }
+		.log {position:absolute;top:10px;left:10px;font-size:18px; border-radius:6px;background-color:#929292; box-shadow:1px 1px 2px white;border:2px solid white;}
+		.heading{color:#C2C1C1;position:absolute;left:340px;top:50px;font-size:40px;}
+    </style>
+ 
+<!--------------------------------------------------------------------------------------------------------------------------------> 
+<body> 
+<button class="log"><a style="text-decoration: none" </style>href="login.php">LOG OUT</a></button>
+<h1 class="heading">LIBRARIES</h1>
+    <div class="content">
+        <div class="left-col">
+            <h1>MUSICITY</h1>
+        <div class="option1">
+			<form action="artist.php" method="POST">
+			<label for="artists">ARTISTS</label>
+				<select name="artist" class="art" id="art2">
+				<option>SELECT</option>
+				<option>Sonu Nigam</option>
+				<option>Hariharan</option>
+				<option>Ajay Chakraborty</option>
+				<option>Armaan Malik</option>
+				<option>Arjit Singh</option>
+				<option>Haricharan</option>
+				<option>Shaan</option>
+				<option>Shankar Mahadevan</option>
+			</select>
+
+		</div>
+
+<div class="option2">
+				<label for="com">COMPOSERS</label>
+				<select name="comps" class="art" id="comp2">
+				<option>SELECT</option>
+				<option>Ajay-Atul</option>
+				<option>A R Rahman</option>
+				<option>Shankar Ehsaan Loy</option>
+				<option>Vishal Shekhar</option>
+				<option>Sanjay Leela Bhansaali</option>
+				<option>Shantnu Moitra</option>
+				<option>Sandesh Shandilya</option>
+				<option>Jatin Lalit</option>
+				<option>Amaal Malik</option>
+				<option>Bhushan kumar</option>
+				<option>Krsna Solo</option>
+				<option>Deepak Pandit</option>
+</select></div>
+<div class="option3">
+			<label for="gen">GENRE</label>
+				<select name="genre" class="art" id="gen2">
+				<option>SELECT</option>
+				<option>Sad</option>
+				<option>Romantic</option>
+				<option>Classical</option>
+				<option>Melody</option>
+				<option>Semi-Classical</option>
+				<option>Mild-Classical</option>
+</select></div>
+</div>
+</div>
+<div>
+<button type="submit" class="button" id="go1" class="go" >GO</a></button></div></form>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<div class="img">
+<form action="allsongs.php">
+<input type="image" name="All Songs" src="http://localhost/MINI%20project/frontend/webpages/Images/bg.png" width="500px" height="150px"  alt="Tool Tip"></form> </div>
+<div class="img1">
+<form action="sonu.php"/>
+<input type="image" name="Sonu Nigam" src="http://localhost/MINI%20project/frontend/webpages/Images/sonu.png" width="200" height="200" alt="Tool Tip"></form> </div>
+<div class="img2">
+<form action="comp.php"/>
+<input type="image" name="arr" src="http://localhost/MINI%20project/frontend/webpages/Images/arr.png" width="200" height="200"  alt="Tool Tip"></form></div>
+<div class="img3">
+<form action="rating.php"/>
+<input type="image" name="all" src="http://localhost/MINI%20project/frontend/webpages/Images/all.jpeg" width="200" height="200"  alt="Tool Tip"></form> </div>
+<div class="img4">
+<form action="label.php"/>
+<input type="image" name="t" src="http://localhost/MINI%20project/frontend/webpages/Images/t.png" width="200" height="200"  alt="Tool Tip"></form> </div>
+</div>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+</body>
+</head>
+</html>

@@ -1,0 +1,54 @@
+<?php 
+session_start(); 
+include "config.php";
+$username = $password = "";
+if(isset($_POST['username']) && isset($_POST['password'])){
+$username = $_POST['username'];
+$password = $_POST['password'];
+$sql="select * from users where username='$username' && password = '$password'";
+$result = mysqli_query($link,$sql);
+$num = mysqli_num_rows($result);
+if($num == 1){
+	$_SESSION['username'] = $username;
+	header('Location: welcome.php');
+}
+else{
+	echo "RETRY WITH CORRECT PASSWORD/USERNAME...";
+	exit;
+}
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></link>
+<style>
+body  {
+  background-image: url("http://localhost/MINI%20project/frontend/webpages/Images/p.jpg");
+}
+.container{
+	margin: auto;
+	width: 50%; padding: 150px;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+	<CENTER>YOU HAVE REGISTERED SUCCESSFULLY...<BR>PLEASE LOG IN...<CENTER>
+    <center><h1>LOGIN</h1></center>
+	<hr>
+	<div align = "center"><form action="login.php" method="post">
+	<div class="form-group">
+	<label>Username</label>
+    <input type="text" placeholder="Enter Username" name="username" class="form-control" required></div>
+	<div class="form-group">
+    <label>Password</label>
+    <input type="password" placeholder="Enter Password" name="password" class="form-control" required></div>
+	<button type="submit" class="btn btn-primary">LOG-IN</button>
+  </div>
+</form>
+</div>
+</body>
+</html>

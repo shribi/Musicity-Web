@@ -1,0 +1,103 @@
+<?php
+include "config.php";
+$name=$_POST['artist'];
+		$sql="Select s_name,c_name,l_name,rating from songs where a_name= '$name'";
+		$result = $link->query($sql);
+		if($result->num_rows>0){
+			echo "<center><table style='width:1100px; font-size: 24px; color: white; position: absolute; right: 15%; top: 17%;' cellpadding='10'><tr><th>SONG<hr></th><th>COMPOSER<hr></th><th>LABEL<hr></th><th>RATING<hr></th></tr>";
+			while($row = $result->fetch_assoc() ){
+				$sname=$row["s_name"];
+				echo "<tr><td>" .$sname. "</td><td>" .$row["c_name"]. "</td><td>" .$row["l_name"]. "</td><td><center>" .$row["rating"]. "</center></td></tr>";
+				
+			}
+			echo "</table></center>";
+		}
+$name=$_POST['comps'];
+				$sql="Select s_name,a_name,l_name,rating from songs where c_name= '$name'";
+		$result = $link->query($sql);
+		if($result->num_rows>0){
+			echo "<center><table style='width:1100px; font-size: 24px; color: white; position: absolute; right: 15%; top: 17%;' cellpadding='10'><tr><th>SONG<hr></th><th>ARTIST<hr></th><th>LABEL<hr></th><th>RATING<hr></th></tr>";
+			while($row = $result->fetch_assoc() ){
+				$sname=$row["s_name"];
+				echo "<tr><td>" .$sname. "</td><td>" .$row['a_name']. "</td><td>".$row["l_name"]. "</td><td><center>" .$row["rating"]. "</center></td></tr>";
+				
+			}
+			echo "</table></center>";
+		}
+		
+$name=$_POST['genre'];
+		$sql="Select s.s_name,s.a_name,s.c_name,g.g_name from songs s,genre g where s.s_id=g.s_id AND g_name= '$name'";
+		$result = $link->query($sql);
+		if($result->num_rows>0){
+			echo "<center><table style='width:1100px; font-size: 24px; color: white; position: absolute; right: 15%; top: 17%;' cellpadding='10'><tr><th>GENRE<hr></th><th>SONG<hr></th><th>ARTIST<hr></th><th>COMPOSER<hr></th></tr>";
+			while($row = $result->fetch_assoc() ){
+				echo "<tr><td>" .$row["g_name"]. "</td><td>" .$row["s_name"]. "</td><td>" .$row["a_name"]. "</td><td><center>" .$row["c_name"]. "</center></td></tr>";
+				
+			}
+			echo "</table></center>";
+		}
+		$link->close();
+		
+
+?> 
+<!DOCtype html>
+<html>
+<head>
+<body> 
+<div align = "center"><form action="nextpage.php" method="post">
+    <div class="content">
+        <div class="left-col">
+            <h1>MUSICITY</h1>
+        </div>
+ 
+        <div class="right-col">
+</body>
+</head>
+<!--------------------------------------------------------------------------------------------------------------------------------> 
+<style>
+
+<!-------------------------------------------------------------------------------------------------------------------------------->  
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            height: 100vh;
+            width: 100%;
+            background-image: url('http://localhost/MINI%20project/frontend/webpages/Images/p.jpg');
+            background-size: 1520px 900px;
+            background-position: center;
+            position: relative;
+        }
+ 
+        .content {
+            width: 100%;
+            position: absolute;
+            top: 45%;
+        }
+ 
+        .left-col {
+			margin-top: -25%;
+            margin-left: 0%;
+        }
+ 
+        .left-col h1 {
+            font-size: 80px;
+            color:  #E6E4E4;
+        }
+		.log{position:absolute;top:-330px;left:10px;font-size:18px; text-decoration:none;border-radius:6px;background-color:#929292; box-shadow:1px 1px 2px white;border:2px solid white;}
+ 
+        #icon {
+            cursor: pointer;
+        }
+    </style>
+  <button class="log" onclick="myFunction()"><a href="welcome.php">BACK</a></button>
+
+<script>
+function myFunction() {
+  location.reload();
+}
+</script>
+<!--------------------------------------------------------------------------------------------------------------------------------> 
+</html>
